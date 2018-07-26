@@ -18,9 +18,10 @@ while newLine:
 
 
 # Collect input of 5 unique element names
+print("list any 5 of the first 20 elements in the Period table")
 element =[]
 while len(element)<5:
-    inputForElement= input("Enter your Element: ")
+    inputForElement= input("Enter the name of an element: ")
     if inputForElement in element:
         print(inputForElement+" was already entered          <--no duplicates allowed ")
     else:
