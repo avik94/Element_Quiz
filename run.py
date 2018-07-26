@@ -27,4 +27,16 @@ while len(element)<5:
         print(inputForElement+" was already entered          <--no duplicates allowed ")
     else:
         element.append(inputForElement)
-print element
+# print element
+
+correctResponse=[]
+incorrectResponse=[]
+for everyElement in element:
+    if everyElement in elementList:
+        correctResponse.append(everyElement)
+    else:
+        incorrectResponse.append(everyElement)
+
+result = len(correctResponse)*20
+print("\n")
+print(str(result)+"% Correct")
