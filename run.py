@@ -1,13 +1,26 @@
-element =[]
-while len(element)<5:
-    inputForElement= input("Enter your Element: ")
-    if inputForElement in element:
-        print(inputForElement+" was already entered          <--no duplicates allowed ")
-    else:
-        element.append(inputForElement)
-print element
-
 file = open("elementPeriodicTable.txt", "w+")
-file.write("Hydrogen\n Helium\n Lithium\n Beryllium\n Boron\n Carbon\n Nitrogen\n Oxygen\n\
-Fluorine\n Neon\n Sodium\n Magnesium\n Aluminum\n Silicon\n Phosphorus\n Sulfur\n Chlorine\n\
-Argon\n Potassium\n Calcium\n") 
+file.write("Hydrogen\nHelium\nLithium\nBeryllium\nBoron\nCarbon\nNitrogen\nOxygen\n\
+Fluorine\nNeon\nSodium\nMagnesium\nAluminum\nSilicon\nPhosphorus\nSulfur\nChlorine\n\
+Argon\nPotassium\nCalcium\n")
+file.close()
+
+file = open("elementPeriodicTable.txt", "r+")
+file.seek(0)
+elementList=[]
+newLine = file.readline().strip("\n").lower()
+while newLine:
+    elementList.append(newLine)
+    newLine = file.readline().strip("\n").lower()
+
+print(elementList)
+
+
+
+# element =[]
+# while len(element)<5:
+#     inputForElement= input("Enter your Element: ")
+#     if inputForElement in element:
+#         print(inputForElement+" was already entered          <--no duplicates allowed ")
+#     else:
+#         element.append(inputForElement)
+# print element
