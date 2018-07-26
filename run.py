@@ -16,8 +16,6 @@ while newLine:
     elementList.append(newLine)
     newLine = file.readline().strip("\n").lower()
 
-print(elementList)
-
 
 # Collect input of 5 unique element names
 element =[]
@@ -27,8 +25,8 @@ while len(element)<5:
         print(inputForElement+" was already entered          <--no duplicates allowed ")
     else:
         element.append(inputForElement)
-# print element
 
+# compare each response to the list of 20 elements
 correctResponse=[]
 incorrectResponse=[]
 for everyElement in element:
@@ -37,6 +35,28 @@ for everyElement in element:
     else:
         incorrectResponse.append(everyElement)
 
+
+
+# %Calculation
 result = len(correctResponse)*20
 print("\n")
 print(str(result)+"% Correct")
+
+
+# CorrectData
+modifiedCorrectResponses=[]
+for CorrectData in correctResponse:
+    result=CorrectData.title()
+    modifiedCorrectResponses.append(result)
+
+found=" ".join(modifiedCorrectResponses)
+print("Found: "+found)
+
+
+# IncorrectData
+modifiedIncorrectResponses=[]
+for IncorrectData in incorrectResponse:
+    result=IncorrectData.title()
+    modifiedIncorrectResponses.append(result)
+notFound=" ".join(modifiedIncorrectResponses)
+print("Not Found: "+notFound)
